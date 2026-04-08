@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Implementation</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            margin-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .color-box {
+            margin: 10px;
+            padding: 15px;
+            display: inline-block;
+            border: 1px solid black;
+            cursor: pointer;
+            width: 80px;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>DOM Implementation</h1>
+
+    <!-- Color Text Elements -->
+    <div class="color-box" onclick="changeColor(this, 'red')">Red</div>
+    <div class="color-box" onclick="changeColor(this, 'blue')">Blue</div>
+    <div class="color-box" onclick="changeColor(this, 'green')">Green</div>
+    <div class="color-box" onclick="changeColor(this, 'yellow')">Yellow</div>
+
+    <br><br>
+
+    <!-- Input Field -->
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <!-- Button -->
+    <button onclick="greetUser()">Greet</button>
+
+    <!-- Output -->
+    <div id="output"></div>
+
+    <script>
+        function changeColor(element, color) {
+            element.style.backgroundColor = color;
+        }
+
+        function greetUser() {
+            let name = document.getElementById("name").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + "!";
+        }
+    </script>
+
+</body>
+</html>
